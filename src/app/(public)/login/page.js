@@ -4,6 +4,7 @@ import { useState } from "react";
 import InputField from "@/ui/InputField";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+export const dynamic = 'force-dynamic'; 
 
 const Page = () => {
   const router = useRouter();

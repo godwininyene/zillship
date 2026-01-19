@@ -21,18 +21,6 @@ const nextConfig = {
       }
     })
     return config
-  },
-  // Turbopack specific configuration
-  experimental: {
-    turbo: {
-      rules: {
-        // Handle video files in Turbopack
-        '*.{mp4,webm,ogg,swf,ogv}': {
-          loaders: ['file-loader'],
-          as: '*.js'
-        }
-      }
-    }
   }
 };
 

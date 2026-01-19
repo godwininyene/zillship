@@ -61,6 +61,8 @@ export const signup = catchAsync(async (req) => {
 
 
 export const login = catchAsync(async (req) => {
+    await connectDB();
+
     //1) Get POSTed email and password
     const body = await req.json()
     const { email, password } = body;

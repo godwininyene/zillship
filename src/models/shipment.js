@@ -179,6 +179,6 @@ ShipmentSchema.methods.updateStatus = async function (newStatus, userId, notes =
 
 
 // Indexes for better query performance
-ShipmentSchema.index({ tracking_number: 1 });
+// ShipmentSchema.index({ tracking_number: 1 });
 export default mongoose.models.Shipment ||
     mongoose.model("Shipment", ShipmentSchema);

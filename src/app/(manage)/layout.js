@@ -12,6 +12,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  // title:"The wild oasis"
+  title: {
+    template: "%s / Zill Ship",
+    default: "Welcome to Zill ship /  Premium Global Shipping Solutions",
+  },
+  // description:
+  //   "Luxurious cabin hotel, located in the heart of the Italian Dolomites,\
+  //   surrounded by beautiful mountains and dark forests",
+}
+
 import { getCurrentUser, requireAuth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
