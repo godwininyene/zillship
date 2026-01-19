@@ -1,26 +1,127 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary-900: #2f0614cc;
+  --color-primary-800: #490b1f;
+  --color-primary-700: #61102a;
+  --color-primary-600: #7a1634;
+  --color-primary-500: #931c3f;
+  --color-primary-400: #e66a8d;
+  --color-primary-200: #f9cfe0;
+  --color-primary-100: #fce7ef;
+  --color-primary-50: #fdf2f6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+body {
+  top: 0 !important;
+}
+.custom-shape-divider-bottom-1767999524 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1767999524 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 95px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1767999524 .shape-fill {
+  fill: #FFFFFF;
+}
+
+
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+.goog-te-gadget {
+  font-size: 0 !important;
+}
+
+.goog-te-gadget select {
+  font-size: 13px !important;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+}
+
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+
+
+
+.animate-fade-up {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.9s;
+  opacity: 0;
+}
+
+
+
+.spinner {
+  margin: 3.2rem auto 1.6rem;
+  width: 60px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  /* border: 8px solid theme('colors.primary.900'); */
+  border: 8px solid var(--colors-primary-900);
+  border-right-color: var(--colors-primary-200);
+  /* border-right-color: theme('colors.primary.200'); */
+  animation: rotate 1s infinite linear;
+}
+
+.spinner-mini {
+  margin: 0;
+  width: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+   border: 2px solid var(--colors-primary-200);
+  /* border: 2px solid theme('colors.primary.200'); */
+  border-right-color: transparent;
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
 }
