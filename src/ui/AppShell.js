@@ -418,18 +418,18 @@ export default function AppShell({ children, user }) {
 
             {/* Mobile Bottom Navigation (for mobile only) */}
             <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-2 px-4 flex justify-around items-center z-40">
-                <button className="flex flex-col items-center p-2">
+                <Link href='/dashboard' className="flex flex-col items-center p-2">
                     <MdDashboard className="h-5 w-5 text-gray-600" />
                     <span className="text-xs mt-1">Dashboard</span>
-                </button>
-                <button className="flex flex-col items-center p-2">
+                </Link>
+                <Link href='/shipments' className="flex flex-col items-center p-2">
                     <FaBox className="h-5 w-5 text-gray-600" />
                     <span className="text-xs mt-1">Shipments</span>
-                </button>
-                <button className="flex flex-col items-center p-2">
+                </Link>
+                <Link href='/create-shipment' className="flex flex-col items-center p-2">
                     <FaSearch className="h-5 w-5 text-gray-600" />
                     <span className="text-xs mt-1">Create</span>
-                </button>
+                </Link>
                 <button className="flex flex-col items-center p-2">
                     <FaUser className="h-5 w-5 text-gray-600" />
                     <span className="text-xs mt-1">Profile</span>
