@@ -24,13 +24,13 @@ const Page = () => {
     const [success, setSuccess] = useState(false);
     const [shippingCost, setShippingCost] = useState(0);
     const [clearanceCost, setClearanceCost] = useState(0)
-    const[total_cost, setTotalCost] = useState(0)
+    const [total_cost, setTotalCost] = useState(0)
 
-    useEffect(()=>{
+    useEffect(() => {
         setTotalCost(shippingCost + clearanceCost)
     }, [shippingCost, clearanceCost])
 
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -72,13 +72,14 @@ const Page = () => {
                     <div className="mb-4">
                         <h3 className='font-black uppercase mb-4 text-gold'>Sender Information:</h3>
 
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-7'>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
 
                             <InputField
                                 label="Sender Name"
                                 placeholder="Enter sender name"
                                 name="sender_name"
                                 error={errors.sender_name}
+                                classNames="mb-5 lg:mb-0"
                             />
                             <InputField
                                 label="Sender Email"
@@ -87,11 +88,17 @@ const Page = () => {
                                 type="email"
                                 error={errors.sender_email}
                             />
+                        </div>
+
+
+
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
                             <InputField
                                 label="Origin Location"
                                 placeholder="Enter sender origin"
                                 name="sender_origin"
                                 error={errors.sender_origin}
+                                classNames="mb-5 lg:mb-0"
                             />
 
                             <InputField
@@ -101,31 +108,35 @@ const Page = () => {
                                 type="tel"
                                 error={errors.sender_phone}
                             />
-                            <div className="col-span-2">
-                                <InputField
-                                    label="Sender Address"
-                                    name="sender_address"
-                                    as="textarea"
-                                    placeholder='Enter sender address'
-                                    error={errors.sender_address}
-                                    classNames="col-span-2"
-
-                                />
-                            </div>
                         </div>
+
+
+                        <div className="mt-5">
+                            <InputField
+                                label="Sender Address"
+                                name="sender_address"
+                                as="textarea"
+                                placeholder='Enter sender address'
+                                error={errors.sender_address}
+                                classNames="col-span-2"
+
+                            />
+                        </div>
+
                     </div>
 
                     {/* Receiver information*/}
                     <div className="mb-4">
                         <h3 className='font-black uppercase mb-4 text-gold'>Receiver Information:</h3>
 
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-7'>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
 
                             <InputField
                                 label="Receiver Name"
                                 placeholder="Enter receiver name"
                                 name="receiver_name"
                                 error={errors.receiver_name}
+                                classNames="mb-5 lg:mb-0"
                             />
                             <InputField
                                 label="Receiver Email"
@@ -134,11 +145,14 @@ const Page = () => {
                                 type='email'
                                 error={errors.receiver_email}
                             />
+                        </div>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
                             <InputField
                                 label="Destination Location"
                                 placeholder="Enter receiver destination"
                                 name="receiver_destination"
                                 error={errors.receiver_destination}
+                                classNames="mb-5 lg:mb-0"
                             />
 
                             <InputField
@@ -148,17 +162,19 @@ const Page = () => {
                                 type='tel'
                                 error={errors.receiver_phone}
                             />
-                            <div className="col-span-2">
-                                <InputField
-                                    label="Receiver Address"
-                                    name="receiver_address"
-                                    as="textarea"
-                                    placeholder='Enter receiver address'
-                                    error={errors.receiver_address}
-                                    classNames="col-span-2"
 
-                                />
-                            </div>
+                        </div>
+
+                        <div className="mt-5">
+                            <InputField
+                                label="Receiver Address"
+                                name="receiver_address"
+                                as="textarea"
+                                placeholder='Enter receiver address'
+                                error={errors.receiver_address}
+                                classNames="col-span-2"
+
+                            />
                         </div>
                     </div>
 
@@ -166,13 +182,14 @@ const Page = () => {
                     <div className="mb-4">
                         <h3 className='font-black uppercase mb-4 text-gold'>Shipment Information:</h3>
 
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-7'>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
 
                             <InputField
                                 label="Quantity"
                                 placeholder="Enter item quantity"
                                 name="quantity"
                                 error={errors.quantity}
+                                classNames="mb-5 lg:mb-0"
                             />
                             <InputField
                                 label="Weight"
@@ -180,11 +197,14 @@ const Page = () => {
                                 name="weight"
                                 error={errors.weight}
                             />
+                        </div>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
                             <InputField
                                 label="Dimensions (LxWxH)"
                                 placeholder="e.g 30x20x15 cm"
                                 name="dimension"
                                 error={errors.dimension}
+                                classNames="mb-5 lg:mb-0"
                             />
 
                             <InputField
@@ -193,6 +213,8 @@ const Page = () => {
                                 type='file'
                                 error={errors.photo}
                             />
+                        </div>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
                             <SelectField
                                 label="Payment Method"
                                 name="payment_method"
@@ -205,6 +227,7 @@ const Page = () => {
                                 ]}
 
                                 error={errors.payment_method}
+                                classNames="mb-5"
                             />
                             <div className="col-span-2">
                                 <InputField
@@ -224,7 +247,7 @@ const Page = () => {
                     <div className="mb-4">
                         <h3 className='font-black uppercase mb-4 text-red-500'>Cost Information:</h3>
 
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-7'>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
 
                             <InputField
                                 type="number"
@@ -233,6 +256,7 @@ const Page = () => {
                                 name="shipping_cost"
                                 error={errors.shipping_cost}
                                 onChange={(e) => setShippingCost(Number(e.target.value))}
+                                classNames="mb-5 lg:mb-0"
                             />
                             <InputField
                                 type="number"
@@ -242,6 +266,9 @@ const Page = () => {
                                 error={errors.clearance_cost}
                                 onChange={(e) => setClearanceCost(Number(e.target.value))}
                             />
+                        </div>
+
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
 
                             <InputField
                                 label="Total Cost"
@@ -251,6 +278,7 @@ const Page = () => {
                                 type="number"
                                 error={errors.total_cost}
                                 value={total_cost}
+                                classNames="mb-5 lg:mb-0"
                             />
 
                             <InputField
@@ -259,12 +287,15 @@ const Page = () => {
                                 type='date'
                                 error={errors.shipped_date}
                             />
+                        </div>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
 
                             <InputField
                                 label="Expected Delivery Date"
                                 name="expected_date"
                                 type='date'
                                 error={errors.expected_date}
+                                classNames="mb-5 lg:mb-0"
                             />
                             <InputField
                                 label="Pickup Date"
@@ -272,24 +303,24 @@ const Page = () => {
                                 type='date'
                                 error={errors.pickup_date}
                             />
+                        </div>
 
-                            <div className="col-span-2">
+                        <div className="mt-5">
 
-                                <SelectField
-                                    label="Shipment Status"
-                                    name="status"
-                                    options={[
-                                        { value: "", label: "Select shipment status" },
-                                        ...statuses.map(status => ({
-                                            value: status.value,
-                                            label: status.label
-                                        }))
-                                    ]}
+                            <SelectField
+                                label="Shipment Status"
+                                name="status"
+                                options={[
+                                    { value: "", label: "Select shipment status" },
+                                    ...statuses.map(status => ({
+                                        value: status.value,
+                                        label: status.label
+                                    }))
+                                ]}
 
-                                    error={errors.status}
-                                />
+                                error={errors.status}
+                            />
 
-                            </div>
                         </div>
                     </div>
 
@@ -311,8 +342,8 @@ const Page = () => {
 
                 </form>
 
-            </div>
-        </div>
+            </div >
+        </div >
 
 
     )

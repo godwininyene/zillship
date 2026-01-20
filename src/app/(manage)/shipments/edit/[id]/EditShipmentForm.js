@@ -74,14 +74,14 @@ const EditShipmentForm = ({ shipment }) => {
                     <div className="mb-4">
                         <h3 className='font-black uppercase mb-4 text-gold'>Sender Information:</h3>
 
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-7'>
-
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
                             <InputField
                                 label="Sender Name"
                                 placeholder="Enter sender name"
                                 name="sender_name"
                                 error={errors.sender_name}
                                 value={shipment.sender_name}
+                                classNames="mb-5 lg:mb-0"
                             />
                             <InputField
                                 label="Sender Email"
@@ -91,12 +91,15 @@ const EditShipmentForm = ({ shipment }) => {
                                 error={errors.sender_email}
                                 value={shipment.sender_email}
                             />
+                        </div>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
                             <InputField
                                 label="Origin Location"
                                 placeholder="Enter sender origin"
                                 name="sender_origin"
                                 error={errors.sender_origin}
                                 value={shipment.sender_origin}
+                                classNames="mb-5 lg:mb-0"
                             />
 
                             <InputField
@@ -107,17 +110,19 @@ const EditShipmentForm = ({ shipment }) => {
                                 error={errors.sender_phone}
                                 value={shipment.sender_phone}
                             />
-                            <div className="col-span-2">
-                                <InputField
-                                    label="Sender Address"
-                                    name="sender_address"
-                                    as="textarea"
-                                    placeholder='Enter sender address'
-                                    error={errors.sender_address}
-                                    value={shipment.sender_address}
 
-                                />
-                            </div>
+                        </div>
+
+                        <div className="mt-5">
+                            <InputField
+                                label="Sender Address"
+                                name="sender_address"
+                                as="textarea"
+                                placeholder='Enter sender address'
+                                error={errors.sender_address}
+                                value={shipment.sender_address}
+
+                            />
                         </div>
                     </div>
 
@@ -125,7 +130,7 @@ const EditShipmentForm = ({ shipment }) => {
                     <div className="mb-4">
                         <h3 className='font-black uppercase mb-4 text-gold'>Receiver Information:</h3>
 
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-7'>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
 
                             <InputField
                                 label="Receiver Name"
@@ -133,6 +138,7 @@ const EditShipmentForm = ({ shipment }) => {
                                 name="receiver_name"
                                 error={errors.receiver_name}
                                 value={shipment.receiver_name}
+                                classNames="mb-5 lg:mb-0"
 
                             />
                             <InputField
@@ -143,12 +149,15 @@ const EditShipmentForm = ({ shipment }) => {
                                 error={errors.receiver_email}
                                 value={shipment.receiver_email}
                             />
+                        </div>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
                             <InputField
                                 label="Destination Location"
                                 placeholder="Enter receiver destination"
                                 name="receiver_destination"
                                 error={errors.receiver_destination}
                                 value={shipment.receiver_destination}
+                                classNames="mb-5 lg:mb-0"
                             />
 
                             <InputField
@@ -159,17 +168,19 @@ const EditShipmentForm = ({ shipment }) => {
                                 error={errors.receiver_phone}
                                 value={shipment.receiver_phone}
                             />
-                            <div className="col-span-2">
-                                <InputField
-                                    label="Receiver Address"
-                                    name="receiver_address"
-                                    as="textarea"
-                                    placeholder='Enter receiver address'
-                                    error={errors.receiver_address}
-                                    value={shipment.receiver_address}
 
-                                />
-                            </div>
+                        </div>
+
+                        <div className="mt-5">
+                            <InputField
+                                label="Receiver Address"
+                                name="receiver_address"
+                                as="textarea"
+                                placeholder='Enter receiver address'
+                                error={errors.receiver_address}
+                                value={shipment.receiver_address}
+
+                            />
                         </div>
                     </div>
 
@@ -177,7 +188,7 @@ const EditShipmentForm = ({ shipment }) => {
                     <div className="mb-4">
                         <h3 className='font-black uppercase mb-4 text-gold'>Shipment Information:</h3>
 
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-7'>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
 
                             <InputField
                                 label="Quantity"
@@ -185,6 +196,7 @@ const EditShipmentForm = ({ shipment }) => {
                                 name="quantity"
                                 error={errors.quantity}
                                 value={shipment.quantity}
+                                classNames="mb-5 lg:mb-0"
                             />
                             <InputField
                                 label="Weight"
@@ -194,6 +206,9 @@ const EditShipmentForm = ({ shipment }) => {
                                 value={shipment.weight}
                                 isRequired={false}
                             />
+                        </div>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
+                        
                             <InputField
                                 label="Dimensions (LxWxH)"
                                 placeholder="e.g 30x20x15 cm"
@@ -201,6 +216,7 @@ const EditShipmentForm = ({ shipment }) => {
                                 error={errors.dimension}
                                 value={shipment.dimension}
                                 isRequired={false}
+                                classNames="mb-5 lg:mb-0"
                             />
 
                             <InputField
@@ -210,6 +226,8 @@ const EditShipmentForm = ({ shipment }) => {
                                 error={errors.photo}
                                 isRequired={false}
                             />
+                        </div>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-x-5 mt-5'>
                             <SelectField
                                 label="Payment Method"
                                 name="payment_method"
@@ -224,6 +242,7 @@ const EditShipmentForm = ({ shipment }) => {
 
                                 error={errors.payment_method}
                                 isRequired={false}
+                                classNames="mb-5"
                             />
                             <div className="col-span-2">
                                 <InputField
@@ -245,7 +264,7 @@ const EditShipmentForm = ({ shipment }) => {
                     <div className="mb-4">
                         <h3 className='font-black uppercase mb-4 text-red-500'>Cost Information:</h3>
 
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-7'>
+                        <div className='grid grid-cols-1 lg:grid-cols-2 gap-7'>
 
                             <InputField
                                 label="Shipping Cost (USD)"
