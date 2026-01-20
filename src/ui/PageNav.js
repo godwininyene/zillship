@@ -6,6 +6,7 @@ import { FaPhone, FaClock, FaShip, FaTruck, FaPlane, FaWarehouse, FaBox, FaGlobe
 import { MdEmail, MdKeyboardArrowDown } from "react-icons/md";
 import { useState, useEffect, useRef } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
+import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 
 const navLinks = [
@@ -37,10 +38,13 @@ const navLinks = [
 
 
 const PageNav = () => {
+
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState(null);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const searchRef = useRef(null);
+    const router = useRouter();
+    const [trackingNumber, setTrackingNumber] = useState("");
 
     // Close mobile menu when clicking outside or resizing
     useEffect(() => {
@@ -82,6 +86,16 @@ const PageNav = () => {
     };
 
 
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (!trackingNumber.trim()) return;
+
+        router.push(`/trackingResult?tracking=${trackingNumber.trim()}`);
+    };
+
+
     return (
         <header className='relative bg-white shadow-lg z-50'>
             {/* Top bar */}
@@ -103,7 +117,7 @@ const PageNav = () => {
                         <div className='flex items-center space-x-4'>
                             <div className='hidden md:flex items-center space-x-2'>
                                 <MdEmail className='text-primary-200' />
-                                <a href='mailto:godwinhigh2@gmail.com' className='hover:text-primary-200 transition-colors'>godwinhigh2@gmail.com</a>
+                                <a href='mailto:support@zillship.com' className='hover:text-primary-200 transition-colors'>support@zillship.com</a>
                             </div>
                             {/* Google Translator */}
                             {/* <div className="hidden md:flex items-center bg-white/10 px-3 py-1 rounded-md">
@@ -188,19 +202,20 @@ const PageNav = () => {
                                         : 'opacity-0 invisible translate-y-2'
                                         }`}
                                 >
-                                    <form className='space-y-3'>
+                                    <form className='space-y-3' onSubmit={handleSubmit}>
                                         <div>
                                             <label className='block text-sm font-medium text-gray-700 mb-2'>
                                                 Track Your Shipment
                                             </label>
                                             <input
+                                                value={trackingNumber}
+                                                onChange={(e) => setTrackingNumber(e.target.value)}
                                                 type='text'
                                                 placeholder='Enter tracking number'
                                                 className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none'
                                             />
                                         </div>
                                         <button
-                                            type='submit'
                                             className='w-full flex items-center justify-center bg-primary-600 text-white py-2 px-4 rounded-lg hover:bg-primary-700 transition-colors font-medium'
                                         >
                                             <FaSearch className='mr-2' />
@@ -212,7 +227,7 @@ const PageNav = () => {
 
                             {/* Get Quote Button */}
                             <Link
-                                href='/quote'
+                                href='/'
                                 className='bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium'
                             >
                                 Get Quote
@@ -239,19 +254,20 @@ const PageNav = () => {
                         <div className='px-4 pt-6 pb-8 space-y-4'>
                             {/* Mobile Search */}
                             <div className='pb-4 border-b border-gray-100'>
-                                <form className='space-y-3'>
+                                <form className='space-y-3' onSubmit={handleSubmit}>
                                     <div>
                                         <label className='block text-sm font-medium text-gray-700 mb-2'>
                                             Track Your Shipment
                                         </label>
                                         <input
+                                            value={trackingNumber}
+                                            onChange={(e) => setTrackingNumber(e.target.value)}
                                             type='text'
                                             placeholder='Enter tracking number'
                                             className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none'
                                         />
                                     </div>
                                     <button
-                                        type='submit'
                                         className='w-full flex items-center justify-center bg-primary-600 text-white py-2 px-4 rounded-lg hover:bg-primary-700 transition-colors font-medium'
                                     >
                                         <FaSearch className='mr-2' />
@@ -261,7 +277,7 @@ const PageNav = () => {
 
                                 {/* Get Quote Button for Mobile */}
                                 <Link
-                                    href='/quote'
+                                    href='/'
                                     className='mt-4 w-full inline-flex justify-center bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors font-medium'
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
@@ -352,10 +368,10 @@ const PageNav = () => {
                                 <div className='flex items-center space-x-2'>
                                     <MdEmail className='text-primary-500' />
                                     <a
-                                        href='mailto:godwinhigh2@gmail.com'
+                                        href='mailto:support@zillship.com'
                                         className='text-gray-700 hover:text-primary-600 transition-colors'
                                     >
-                                        godwinhigh2@gmail.com
+                                        support@zillship.com
                                     </a>
                                 </div>
                             </div>
