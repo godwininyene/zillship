@@ -154,10 +154,10 @@ const HomeHero = () => {
               </Link>
 
               <Link
-                href="/contact"
+                href="/track-order"
                 className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300 font-semibold text-lg inline-flex items-center justify-center min-w-[180px]"
               >
-                Contact Us
+                Track Now
                 <FaArrowRight className="ml-2 inline" />
               </Link>
             </div>

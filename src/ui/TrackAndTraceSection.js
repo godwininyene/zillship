@@ -1,7 +1,20 @@
+'use client'
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { FaSearch } from "react-icons/fa"
 
-const TrackAndTraceSection = () =>{
-    return(
+const TrackAndTraceSection = () => {
+    const router = useRouter();
+    const [trackingNumber, setTrackingNumber] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (!trackingNumber.trim()) return;
+
+        router.push(`/trackingResult?tracking=${trackingNumber.trim()}`);
+    };
+    return (
         <section className="relative -mt-16 z-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
@@ -13,13 +26,18 @@ const TrackAndTraceSection = () =>{
                             Enter your tracking number to get real-time updates on your package
                         </p>
                     </div>
-                    <form className="max-w-2xl mx-auto">
+                    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
                         <div className="flex flex-col sm:flex-row gap-4">
                             <div className="flex-1">
-                                <input placeholder="Enter your tracking number" className="w-full px-6 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"/>
+                                <input
+                                    value={trackingNumber}
+                                    onChange={(e) => setTrackingNumber(e.target.value)}
+                                    placeholder="Enter your tracking number"
+                                    className="w-full px-6 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                                />
                             </div>
                             <button className="bg-primary-600 flex cursor-pointer items-center text-white px-8 py-4 rounded-lg hover:bg-primary-700 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl whitespace-nowrap">
-                                <FaSearch className="mr-2"/>
+                                <FaSearch className="mr-2" />
                                 Track shipment
 
                             </button>

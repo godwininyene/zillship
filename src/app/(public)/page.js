@@ -7,7 +7,7 @@ import ServicesSection from "@/ui/ServicesSection";
 import TrackAndTraceSection from "@/ui/TrackAndTraceSection";
 import SectionCTA from "@/ui/SectionCTA";
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <HomeHero />
