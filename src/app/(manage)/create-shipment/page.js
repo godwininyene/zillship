@@ -325,7 +325,7 @@ const Page = () => {
                     </div>
 
 
-                    <div className="mt-10">
+                    <div className="mt-10 mb-8">
                         <button
                             disabled={loading}
                             className="bg-primary-600 cursor-pointer hover:bg-primary-700 disabled:opacity-50 text-white px-8 py-3 rounded-lg"

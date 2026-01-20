@@ -123,7 +123,7 @@ const InvoiceUI = ({ shipment }) => {
             </div>
 
             {/* Invoice Container */}
-            <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+            <div className="max-w-4xl mx-auto mb-12 bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
                 {/* Header with Actions */}
                 <div className="bg-linear-to-r from-primary-600 to-primary-700 text-white p-6 md:p-8">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between">
@@ -181,13 +181,13 @@ const InvoiceUI = ({ shipment }) => {
                                     <p className="text-sm text-gray-500 mb-1">Due Date</p>
                                     <p className="font-medium">{formatDate(shipment.expected_date)}</p>
                                 </div>
-                                <div>
+                                <div className="col-span-2 lg:col-span-1">
                                     <p className="text-sm text-gray-500 mb-1">Tracking Number</p>
                                     <p className="font-medium text-primary-600">{shipment.tracking_number}</p>
                                 </div>
-                                <div>
+                                <div className="col-span-2 lg:col-span-1">
                                     <p className="text-sm text-gray-500 mb-1">Status</p>
-                                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(shipment.status)}`}>
+                                    <span className={`flex items-center px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(shipment.status)}`}>
                                         {getStatusIcon(shipment.status)}
                                         <span className="ml-2">{shipment.status}</span>
                                     </span>
@@ -425,7 +425,7 @@ const InvoiceUI = ({ shipment }) => {
                     </div>
 
                     {/* Footer */}
-                    <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row md:items-center md:justify-between">
+                    <div className="border-t border-gray-200 py-8 flex flex-col md:flex-row md:items-center md:justify-between">
                         <div className="mb-4 md:mb-0">
                             <p className="text-sm text-gray-500">Thank you for choosing ZillShip Logistics</p>
                             <p className="text-sm text-gray-500">For any questions, contact: support@zillship.com</p>
