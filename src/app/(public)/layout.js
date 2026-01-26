@@ -3,6 +3,7 @@ import '@/app/globals.css'
 import PageNav from "@/ui/PageNav";
 import Footer from "@/ui/Footer";
 import AOSProvider from "@/ui/AOSProvider";
+import GoogleTranslateLoader from "@/ui/GoogleTranslateLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* <GoogleTranslateLoader /> */}
         <PageNav/>
         <AOSProvider>
           <main> {children}</main>

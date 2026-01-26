@@ -153,9 +153,12 @@ ShipmentSchema.pre('save', async function () {
     if (this.shipping_cost && this.clearance_cost) {
         this.total_cost = this.shipping_cost + this.clearance_cost;
     }
-    const prefix = 'ZS';
-    const random = Math.floor(100000000 + Math.random() * 900000000);
-    this.tracking_number = `${prefix}${random}`;
+    // Generate tracking number ONLY when creating a new record
+    if (this.isNew && !this.tracking_number) {
+        const prefix = 'ZS';
+        const random = Math.floor(100000000 + Math.random() * 900000000);
+        this.tracking_number = `${prefix}${random}`;
+    }
 });
 
 // Method to update status with history

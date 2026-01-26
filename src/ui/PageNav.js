@@ -8,6 +8,7 @@ import { useState, useEffect, useRef } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
+import LanguageSwitcher from './LanguageSwitcher';
 
 const navLinks = [
     { label: 'Home', href: '/' },
@@ -25,16 +26,16 @@ const navLinks = [
     },
     { label: 'Track Shipment', href: '/track-order' },
     { label: 'Contact', href: '/' },
-    { label: 'Admin', href: '/login' }
+    // { label: 'Admin', href: '/login' }
 
 ];
 
 
 
 
-// const GoogleTranslate = dynamic(() => import("./GoogleTranslate"), {
-//     ssr: false
-// });
+const GoogleTranslate = dynamic(() => import("./GoogleTranslate"), {
+    ssr: false
+});
 
 
 const PageNav = () => {
@@ -119,10 +120,15 @@ const PageNav = () => {
                                 <MdEmail className='text-primary-200' />
                                 <a href='mailto:support@zillship.com' className='hover:text-primary-200 transition-colors'>support@zillship.com</a>
                             </div>
-                            {/* Google Translator */}
-                            {/* <div className="hidden md:flex items-center bg-white/10 px-3 py-1 rounded-md">
-                                <GoogleTranslate />
-                            </div> */}
+                            {/* Google Translator (Desktop) */}
+                            <div className="flex items-center gap-2 bg-white/10 px-3  rounded-full border border-white/20">
+                                <FaGlobe className="text-white text-sm" />
+                                <div className="translator-desktop">
+                                    <GoogleTranslate />
+                                </div>
+                            </div>
+                            {/* <LanguageSwitcher /> */}
+
 
                         </div>
                     </div>
@@ -326,36 +332,7 @@ const PageNav = () => {
                             ))}
 
                             {/* Mobile Google Translator */}
-                            {/* <div className='pt-4 border-t border-gray-100'>
-                                <div className='text-sm font-medium text-gray-700 mb-2'>Language</div>
-                                <GoogleTranslate />
-                                <style jsx global>{`
-                                    .goog-te-gadget {
-                                        color: transparent !important;
-                                        font-size: 0 !important;
-                                    }
-                                    .goog-te-gadget .goog-te-combo {
-                                        width: 100% !important;
-                                        margin: 0 !important;
-                                        padding: 8px 12px !important;
-                                        border: 1px solid #d1d5db !important;
-                                        border-radius: 6px !important;
-                                        background: white !important;
-                                        color: #374151 !important;
-                                        font-size: 14px !important;
-                                        cursor: pointer !important;
-                                    }
-                                    .goog-te-gadget .goog-te-combo:hover {
-                                        border-color: #9ca3af !important;
-                                    }
-                                    .goog-te-banner-frame {
-                                        display: none !important;
-                                    }
-                                    body {
-                                        top: 0 !important;
-                                    }
-                                `}</style>
-                            </div> */}
+                           
                         </div>
 
                         {/* Mobile Contact Info */}

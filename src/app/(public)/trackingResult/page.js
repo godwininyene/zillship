@@ -481,9 +481,9 @@ const Page = async ({ searchParams }) => {
                 <h3 className="text-lg font-bold text-gray-800">Shipment Route</h3>
                 <span className="ml-auto text-xs text-gray-500">Route Visualization</span>
               </div>
-              <div className="p-0">
+              <div className="p-4">
                 <div className="relative h-137.5">
-                  <div id="shipment_map" className="w-full h-full overflow-hidden leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim">
+                  {/* <div id="shipment_map" className="w-full h-full overflow-hidden leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim">
                     <div className="w-full h-full bg-gray-100 flex items-center justify-center">
                       <div className="text-center">
                         <FaMap className="text-4xl text-gray-400 mx-auto mb-3" />
@@ -491,10 +491,10 @@ const Page = async ({ searchParams }) => {
                         <p className="text-sm text-gray-500 mt-2">Route visualization</p>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
-                  {/* Route Info Overlay */}
-                  <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm p-4 rounded-lg shadow-lg max-w-sm">
+                  {/* Route Info Overlay will be position absolute bottom-4 left-4 when map appear*/}
+                  <div className=" bg-white bg-opacity-90 backdrop-filter backdrop-blur-sm p-4 rounded-lg shadow-lg max-w-sm">
                     <h4 className="text-sm font-semibold text-gray-800 mb-3">Shipment Route</h4>
 
                     <div className="space-y-3">
@@ -634,10 +634,10 @@ const Page = async ({ searchParams }) => {
                   </div>
 
                   <div className="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
-                    <button className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all">
+                    <Link href={`/invoice/${shipment._id}`} className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all">
                       <FaPrint className="h-4 w-4 mr-2" />
                       Print Receipt
-                    </button>
+                    </Link>
 
                     {shipment.payment_method === 'Receiver Pays' && (
                       <button className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-all">

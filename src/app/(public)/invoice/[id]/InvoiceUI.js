@@ -112,7 +112,7 @@ const InvoiceUI = ({ shipment }) => {
     return (
         <div className="min-h-screen bg-gray-50 p-4 md:p-6">
             {/* Navigation */}
-            <div className="mb-6">
+            {/* <div className="mb-6">
                 <Link
                     href="/shipments"
                     className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium"
@@ -120,7 +120,7 @@ const InvoiceUI = ({ shipment }) => {
                     <FaArrowLeft className="mr-2 h-4 w-4" />
                     Back to Shipments
                 </Link>
-            </div>
+            </div> */}
 
             {/* Invoice Container */}
             <div className="max-w-4xl mx-auto mb-12 bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">

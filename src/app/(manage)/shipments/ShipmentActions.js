@@ -6,7 +6,7 @@ export default function ShipmentActions({ shipmentId }) {
   const router = useRouter()
 
   const handleViewInvoice = () => {
-    router.push(`/shipments/invoice/${shipmentId}`)
+    router.push(`/invoice/${shipmentId}`)
   }
 
   return (
