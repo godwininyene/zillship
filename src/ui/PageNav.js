@@ -118,7 +118,7 @@ const PageNav = () => {
                         <div className='flex items-center space-x-4'>
                             <div className='hidden md:flex items-center space-x-2'>
                                 <MdEmail className='text-primary-200' />
-                                <a href='mailto:support@zillship.com' className='hover:text-primary-200 transition-colors'>support@zillship.com</a>
+                                <a href='mailto:zillshipsupportteam@gmail.com' className='hover:text-primary-200 transition-colors'>zillshipsupportteam@gmail.com</a>
                             </div>
                             {/* Google Translator (Desktop) */}
                             <div className="flex items-center gap-2 bg-white/10 px-3  rounded-full border border-white/20">
@@ -345,10 +345,10 @@ const PageNav = () => {
                                 <div className='flex items-center space-x-2'>
                                     <MdEmail className='text-primary-500' />
                                     <a
-                                        href='mailto:support@zillship.com'
+                                        href='mailto:zillshipsupportteam@gmail.com'
                                         className='text-gray-700 hover:text-primary-600 transition-colors'
                                     >
-                                        support@zillship.com
+                                       zillshipsupportteam@gmail.com
                                     </a>
                                 </div>
                             </div>

@@ -65,7 +65,7 @@ const Footer = () => {
                 { label: 'About Us', href: '/about' },
                 { label: 'Our Services', href: '/services' },
                 { label: 'Track Order', href: '/track-order' },
-                { label: 'Contact Us', href: '/contact' },
+                { label: 'Contact Us', href: '/' },
                 { label: 'Diplomatic Services', href: '/diplomatic' }
               ].map((link, i) => (
                 <li key={i}>
@@ -86,7 +86,7 @@ const Footer = () => {
             <h4 className='text-lg font-semibold mb-6 text-white'>Contact Info</h4>
             <div className='space-y-4'>
               {[
-                { icon: FaEnvelope, label: 'Email', value: 'support@zillship.com', href: 'mailto: support@zillship.com' },
+                { icon: FaEnvelope, label: 'Email', value: 'zillshipsupportteam@gmail.com', href: 'mailto:zillshipsupportteam@gmail.com' },
                 { icon: FaPhone, label: 'Call Us', value: 'TOLL FREE Support', href: 'tel:+914567890' },
                 { icon: FaClock, label: 'Working Hours', value: '24/7 Global Support', href: '#' }
               ].map((item, i) => (
